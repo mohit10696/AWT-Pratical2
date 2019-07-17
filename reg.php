@@ -227,7 +227,7 @@ Singing
 <input type="checkbox" name="Hobby_Singing" value="Singing" />
 Dancing
 <input type="checkbox" name="Hobby_Dancing" value="Dancing" />
-Sketching
+Cooking
 <input type="checkbox" name="Hobby_Cooking" value="Cooking" />
 <br />
 Others
@@ -278,15 +278,17 @@ $Email_Id = $_POST['Email_Id'];
 $Mobile_Number = $_POST['Mobile_Number'];
 //$Gender= null;
 if(isset($_POST['Gender']))$Gender = $_POST['Gender'];
-// if(isset($_POST['Gender']))$Gender = $_POST['Gender'];
+if(isset($_POST['Course']))$Gender = $_POST['Course'];
 $Address = $_POST['Address'];
 $City = $_POST['City'];
 $Pin_Code = $_POST['Pin_Code'];
 $State = $_POST['State'];
-// $Hobby_Cooking  = $_POST['Hobby_Cooking'];
-// $Hobby_Dancing  = $_POST['Hobby_Dancing'];
-// $Hobby_Other  = $_POST['Hobby_Other'];
-// $Hobby_Singing  = $_POST['Hobby_Singing'];
+$Hobby_Cooking  = isset($_POST['Hobby_Cooking']);
+$Hobby_Dancing  = isset($_POST['Hobby_Dancing']);
+$Hobby_Other  = $_POST['Other_Hobby'];
+$Hobby_Singing  = isset($_POST['Hobby_Singing']);
+$Hobby_Drawing  = isset($_POST['Hobby_Drawing']);
+
 }
 
 
