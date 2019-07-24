@@ -1,3 +1,4 @@
+
 <html>
 <head>
 <title>Student Registration Form</title>
@@ -253,7 +254,7 @@ M.Sc
 </td>
 </tr>
  
-<!----- Submit and Reset ------------------------------------------------->
+<!----- Submit and Reset -------------------------- ----------------------->
 <tr>
 <td colspan="2" align="center">
 <input type="submit" value="Submit">
@@ -283,11 +284,16 @@ $Address = $_POST['Address'];
 $City = $_POST['City'];
 $Pin_Code = $_POST['Pin_Code'];
 $State = $_POST['State'];
-$Hobby_Cooking  = isset($_POST['Hobby_Cooking']);
-$Hobby_Dancing  = isset($_POST['Hobby_Dancing']);
-$Hobby_Other  = $_POST['Other_Hobby'];
-$Hobby_Singing  = isset($_POST['Hobby_Singing']);
-$Hobby_Drawing  = isset($_POST['Hobby_Drawing']);
+$birthdate = $Birthday_day."-".$Birthday_Month."/".$Birthday_Year;
+  $quary = "INSERT INTO `regdetails`(`Firstname`, `Lastname`,`Emailid`, `number`, `Address`, `City`, `Pincode`, `State`) VALUES ('$fname','$lname','$Email_Id',$Mobile_Number,'$Address','$City',$Pin_Code,'$State')";
+
+  if(mysqli_query($con,$quary))
+  {
+    echo "<script type='text/javascript'>alert('Data Added');</script>";
+  }
+   else {
+    echo $quary.mysqli_error($con);
+}
 
 }
 
